@@ -4,6 +4,7 @@
 
 [node name="TileParedes" type="TileMap"]
 tile_set = ExtResource( 1 )
+collision_mask = 0
 format = 1
 __meta__ = {
 "_edit_lock_": true
