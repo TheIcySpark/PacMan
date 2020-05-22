@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://Scripts/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/CamaraPacMan.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.1848, 28.5696 )
@@ -209,11 +210,72 @@ tracks/2/keys = {
 "values": [ 0.0 ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "Zoom in"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CamaraPacMan:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Zoom out"
+tracks/0/type = "value"
+tracks/0/path = NodePath("CamaraPacMan:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Zoom in"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "Zoom out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:zoom")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
+}
+
 [node name="Pacman" type="KinematicBody2D"]
 position = Vector2( 96, 96 )
 collision_layer = 8
 collision_mask = 7
 script = ExtResource( 1 )
+velocidad = 256
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
@@ -235,6 +297,29 @@ __meta__ = {
 "anims/Caminar derecha" = SubResource( 4 )
 "anims/Caminar izquierda" = SubResource( 5 )
 "anims/Posicion inicial" = SubResource( 6 )
+"anims/Zoom in" = SubResource( 7 )
+"anims/Zoom out" = SubResource( 8 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 enabled = true
+
+[node name="CamaraPacMan" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.25, 1.25 )
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+smoothing_enabled = true
+smoothing_speed = 2.0
+offset_v = 1.0
+offset_h = 1.0
+script = ExtResource( 3 )
+
+[node name="AnimationCamara" type="AnimationPlayer" parent="CamaraPacMan"]
+"anims/Zoom in" = SubResource( 9 )
+"anims/Zoom out" = SubResource( 10 )
+
+[node name="PowerUpTimer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
