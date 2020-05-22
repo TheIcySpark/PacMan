@@ -3,6 +3,10 @@ enum CONSTANTE{velcidadPowerUp=400,velocidad=256}
 
 func _ready():
 	animationPlayer.play(mapAnim[direccion])
+	Pruebas()
+
+
+func Pruebas():
 	PowerUp(10)
 
 func PowerUp(tiempo:int):
