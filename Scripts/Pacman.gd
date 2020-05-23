@@ -1,16 +1,16 @@
 extends "res://Scripts/MovimientoPacMan.gd"
-enum CONSTANTE{velcidadPowerUp=400,velocidad=256}
+enum CONSTANTE{velcidadPowerUp=400,velocidad=256,tiempoPowerUp=10}
 
 func _ready():
 	animationPlayer.play(mapAnim[direccion])
-	Pruebas()
+	$CamaraPacMan/AnimationCamara.play("Zoom in")
 
 
 func Pruebas():
-	PowerUp(10)
+	pass
 
-func PowerUp(tiempo:int):
-	$PowerUpTimer.start(tiempo)
+func PowerUp():
+	$PowerUpTimer.start(CONSTANTE.tiempoPowerUp)
 	$CamaraPacMan.PowerUp()
 	velocidad=CONSTANTE.velcidadPowerUp
 
