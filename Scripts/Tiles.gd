@@ -11,7 +11,6 @@ func PonerComida():
 	var j=0
 	while get_cellv(world_to_map(Vector2(i,j)))!=-1:
 		while get_cellv(world_to_map(Vector2(i,j)))!=-1:
-			print(get_cellv(world_to_map(Vector2(i,j))))
 			if get_cellv(world_to_map(Vector2(i,j)))==1:
 				var comida=escenaComida.instance()
 				comida.position=Vector2(i+offset,j+offset)
