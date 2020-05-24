@@ -7,7 +7,6 @@
 script = ExtResource( 1 )
 
 [node name="Informacion" type="HBoxContainer" parent="."]
-editor/display_folded = true
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0
@@ -15,27 +14,27 @@ margin_right = 172.0
 
 [node name="Puntaje" type="Label" parent="Informacion"]
 margin_top = 9.0
-margin_right = 64.0
+margin_right = 68.0
 margin_bottom = 23.0
-text = "Puntaje: 0"
+text = "Puntaje: 0 "
 
 [node name="Vida" type="TextureRect" parent="Informacion"]
-margin_left = 68.0
-margin_right = 100.0
+margin_left = 72.0
+margin_right = 104.0
 margin_bottom = 32.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Vida2" type="TextureRect" parent="Informacion"]
-margin_left = 104.0
-margin_right = 136.0
+margin_left = 108.0
+margin_right = 140.0
 margin_bottom = 32.0
 texture = ExtResource( 2 )
 stretch_mode = 5
 
 [node name="Vida3" type="TextureRect" parent="Informacion"]
-margin_left = 140.0
-margin_right = 172.0
+margin_left = 144.0
+margin_right = 176.0
 margin_bottom = 32.0
 texture = ExtResource( 2 )
 stretch_mode = 5

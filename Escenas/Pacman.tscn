@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Scripts/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/CamaraPacMan.gd" type="Script" id=3]
+[ext_resource path="res://Escenas/GUI.tscn" type="PackedScene" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25.1848, 28.5696 )
@@ -318,6 +319,8 @@ script = ExtResource( 3 )
 [node name="AnimationCamara" type="AnimationPlayer" parent="CamaraPacMan"]
 "anims/Zoom in" = SubResource( 9 )
 "anims/Zoom out" = SubResource( 10 )
+
+[node name="GUI" parent="CamaraPacMan" instance=ExtResource( 4 )]
 
 [node name="PowerUpTimer" type="Timer" parent="."]
 wait_time = 10.0

@@ -5,4 +5,5 @@ func _ready():
 
 
 func _on_Comida_body_entered(body):
+	body.set_puntaje(body.get_puntaje()+50)
 	queue_free()

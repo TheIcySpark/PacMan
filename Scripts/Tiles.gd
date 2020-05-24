@@ -18,3 +18,5 @@ func PonerComida():
 			j+=aumento
 		i+=aumento
 		j=0
+
+
