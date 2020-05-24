@@ -11,8 +11,8 @@ func Pruebas():
 	pass
 
 func PowerUp():
+	if $PowerUpTimer.get_time_left()==0: $CamaraPacMan.PowerUp()
 	$PowerUpTimer.start(CONSTANTE.tiempoPowerUp)
-	$CamaraPacMan.PowerUp()
 	velocidad=CONSTANTE.velcidadPowerUp
 
 
