@@ -1,6 +1,8 @@
 extends KinematicBody2D
 onready var dir=MOVIMIENTO.new(self.position)
+onready var vidas=get_tree().get_nodes_in_group("Informacion").front()
 export var velocidad=128
+export var posInicial:=Vector2(0,0)
 
 class MOVIMIENTO:
 	enum CONSTANTE {sinDireccion=0 ,arriba=1, derecha=2, abajo=3, izquierda=4}

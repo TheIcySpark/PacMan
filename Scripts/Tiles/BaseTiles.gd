@@ -6,7 +6,7 @@ func _ready():
 func PonerComida():
 	var aumento=64
 	var offset=32
-	var escenaComida=preload("res://Escenas/Comida.tscn")
+	var escenaComida=preload("res://Escenas/Consumibles/Comida.tscn")
 	var i=0
 	var j=0
 	while get_cellv(world_to_map(Vector2(i,j)))!=-1:

@@ -10,3 +10,7 @@ func _on_PowerUpTimer_timeout():
 func PowerUpActivado()->bool:
 	if $PowerUpTimer.get_time_left()>0: return true
 	else: return false
+
+func Muerte():
+	vidas.QuitarVida()
+	self.position=posInicial

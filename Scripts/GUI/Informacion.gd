@@ -9,7 +9,7 @@ func VidasRestantes()->int:
 	return get_tree().get_nodes_in_group("Vidas").size()
 
 func QuitarVida()->void:
-	get_tree().get_nodes_in_group("Vidas").pop_back()
+	get_tree().get_nodes_in_group("Vidas").back().queue_free()
 
 func AgregarVida()->void:
 	var vida:TextureRect
