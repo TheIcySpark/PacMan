@@ -1,7 +1,11 @@
 extends Camera2D
+onready var tiles=get_tree().get_nodes_in_group("Tiles").front() #Automatizar Limites
+
+func _ready():
+	$AnimacionCamara.play("Zoom in")
 
 func PowerUp():
-	$AnimationCamara.play("Zoom out")
+	$AnimacionCamara.play("Zoom out")
 
 func FinPowerUp():
-	$AnimationCamara.play("Zoom in")
+	$AnimacionCamara.play("Zoom in")
