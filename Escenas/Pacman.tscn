@@ -305,7 +305,6 @@ enabled = true
 script = ExtResource( 3 )
 
 [node name="CamaraPacMan" type="Camera2D" parent="."]
-editor/display_folded = true
 current = true
 zoom = Vector2( 1.25, 1.25 )
 limit_left = 0

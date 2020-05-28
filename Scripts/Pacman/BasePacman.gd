@@ -52,7 +52,7 @@ func Mover():
 			dir.set_direccion(nuevaDir)
 			$AnimacionPacman.play(dir.get_animacion())
 		elif $DeteccionObstaculos.PosicionLibre(dir.get_direccion()*64):
-			dir.set_direccion(nuevaDir)
+			dir.set_direccion(dir.direccion)
 			$AnimacionPacman.play(dir.get_animacion())
 	elif dir.get_posSig()+dir.mapDir[dir.ObtenerDireccion()]*64==dir.get_posActual():
 		dir.set_direccion(dir.ObtenerDireccion())
