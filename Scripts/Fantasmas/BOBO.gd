@@ -10,6 +10,8 @@ func Mover():
 		dir.set_direccionAleatorio()
 		while not $DeteccionObstaculos.PosicionLibre(dir.mapDir[dir.direccion]*64):
 			dir.set_direccionAleatorio()
+		if not pacman.PowerUpActivado(): $SpriteBOBO/AnimacionBOBO.play(dir.mapAnim[dir.direccion])
+		else: $SpriteBOBO/AnimacionBOBO.play("Caminar vulnerable")
 
 func _process(delta):
 	Mover()

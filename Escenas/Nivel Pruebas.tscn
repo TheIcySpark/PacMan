@@ -11,7 +11,8 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 
 [node name="Pacman" parent="." index="0" instance=ExtResource( 2 )]
 editor/display_folded = true
-velocidad = 100
+velocidad = 85
+posInicial = Vector2( 96, 96 )
 
 [node name="CamaraPacMan" parent="Pacman" index="4"]
 limit_right = 1728
@@ -26,6 +27,9 @@ position = Vector2( 800, 736 )
 [node name="GUI" parent="." index="3" instance=ExtResource( 4 )]
 
 [node name="BOBO" parent="." index="4" instance=ExtResource( 5 )]
-position = Vector2( 544, 864 )
+position = Vector2( 672, 224 )
+
+[node name="BOBO2" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 1632, 864 )
 
 [editable path="Pacman"]

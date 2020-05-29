@@ -12,5 +12,8 @@ func PowerUpActivado()->bool:
 	else: return false
 
 func Muerte():
+	if vidas.VidasRestantes()==0:
+		get_tree().reload_current_scene()
 	vidas.QuitarVida()
 	self.position=posInicial
+	dir.IgualarPosiciones(posInicial)

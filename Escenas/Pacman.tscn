@@ -271,7 +271,9 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
 }
 
-[node name="Pacman" type="KinematicBody2D"]
+[node name="Pacman" type="KinematicBody2D" groups=[
+"Pacman",
+]]
 position = Vector2( 96, 96 )
 collision_layer = 8
 collision_mask = 7
