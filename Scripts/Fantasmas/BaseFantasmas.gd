@@ -1,7 +1,7 @@
 extends KinematicBody2D
-onready var dir:= DIRECCION.new(self.position)
 onready var puntaje=get_tree().get_nodes_in_group("Puntaje").front()
 onready var pacman=get_tree().get_nodes_in_group("Pacman").front()
+onready var dir:= DIRECCION.new(self.position)
 export var velocidad:int =200
 
 class DIRECCION:
