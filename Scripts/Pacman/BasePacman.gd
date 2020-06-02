@@ -3,13 +3,20 @@ export (int) var velocidad
 onready var posInicial: Vector2= self.position
 onready var deteccionObstaculos: RayCast2D= $DeteccionObstaculos
 onready var animacion: AnimationPlayer= $Sprite/Animacion
+onready var timerPowerUp: Timer= $PowerUpTimer
 var mapAnimacion: Dictionary= {Vector2.UP: "Caminar arriba", Vector2.RIGHT: "Caminar derecha", Vector2.DOWN: "Caminar abajo",
 							Vector2.LEFT: "Caminar izquierda"}
 var tamTile: int= 64
-var powerUp: bool= false
+var powerUp: bool= false setget set_powerUp, get_powerUp
 var direccion: Vector2= Vector2.ZERO
 onready var idealPosActual: Vector2= self.position
 onready var idealPosSig: Vector2= self.position
+
+func set_powerUp(pU: bool)-> void:
+	if timerPowerUp.get_time_left()>0: timerPowerUp.set_time()
+
+func get_powerUp()-> bool:
+	return powerUp
 
 func _ready() -> void:
 	animacion.play("Posicion inicial")

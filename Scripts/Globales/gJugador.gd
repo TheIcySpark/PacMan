@@ -1,8 +1,13 @@
 extends Node
 var puntaje: int= 0 setget set_puntaje, get_puntaje
 var vidas: int= 3 setget set_vidas, get_vidas
-var powerUp: bool= false
+var powerUp: bool= false setget set_powerUp, get_powerUp
 
+func set_powerUp(pU: bool)-> void:
+	powerUp=pU
+
+func get_powerUp()-> bool:
+	return powerUp
 
 func set_puntaje(nuevoPuntaje: int)-> void:
 	puntaje=nuevoPuntaje
