@@ -1,26 +1,18 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=2 format=2]
 
 [ext_resource path="res://Scripts/GUI/GUI.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/GUI/Informacion.gd" type="Script" id=2]
-[ext_resource path="res://Scripts/GUI/Puntaje.gd" type="Script" id=3]
 
 [node name="GUI" type="CanvasLayer"]
 script = ExtResource( 1 )
 
-[node name="Informacion" type="HBoxContainer" parent="." groups=[
-"Informacion",
-]]
+[node name="Informacion" type="HBoxContainer" parent="."]
 anchor_top = 1.0
 anchor_bottom = 1.0
 margin_top = -32.0
 margin_right = 172.0
-script = ExtResource( 2 )
 
-[node name="Puntaje" type="Label" parent="Informacion" groups=[
-"Puntaje",
-]]
+[node name="Puntaje" type="Label" parent="Informacion"]
 margin_top = 9.0
 margin_right = 68.0
 margin_bottom = 23.0
 text = "Puntaje: 0 "
-script = ExtResource( 3 )

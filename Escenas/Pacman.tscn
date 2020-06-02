@@ -1,8 +1,8 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Pacman/Pacman.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
-[ext_resource path="res://Scripts/Pacman/DeteccionObstaculos.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/Pacman/DeteccionObstaculos.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=3]
 [ext_resource path="res://Scripts/Pacman/CamaraPacMan.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,7 +13,7 @@ resource_name = "Caminar abajo"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpritePacman:frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -25,7 +25,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpritePacman:flip_h")
+tracks/1/path = NodePath(".:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -37,7 +37,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpritePacman:rotation_degrees")
+tracks/2/path = NodePath(".:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -54,19 +54,19 @@ resource_name = "Caminar arriba"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpritePacman:frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.5 ),
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpritePacman:flip_h")
+tracks/1/path = NodePath(".:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -78,7 +78,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpritePacman:rotation_degrees")
+tracks/2/path = NodePath(".:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -94,7 +94,7 @@ tracks/2/keys = {
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpritePacman:frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -106,7 +106,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpritePacman:flip_h")
+tracks/1/path = NodePath(".:flip_h")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -118,7 +118,7 @@ tracks/1/keys = {
 "values": [ false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpritePacman:rotation_degrees")
+tracks/2/path = NodePath(".:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -135,31 +135,31 @@ resource_name = "Caminar izquierda"
 length = 0.6
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpritePacman:flip_h")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("SpritePacman:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
 "times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpritePacman:rotation_degrees")
+tracks/2/path = NodePath(".:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -175,7 +175,7 @@ tracks/2/keys = {
 resource_name = "Posicion inicial"
 length = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("SpritePacman:flip_h")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -184,10 +184,10 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ 0 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("SpritePacman:frame")
+tracks/1/path = NodePath(".:rotation_degrees")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -195,11 +195,11 @@ tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 0 ]
+"update": 0,
+"values": [ 0.0 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("SpritePacman:rotation_degrees")
+tracks/2/path = NodePath(".:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -207,41 +207,11 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=7]
-resource_name = "Zoom in"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CamaraPacMan:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.5, 1.5 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "Zoom out"
-tracks/0/type = "value"
-tracks/0/path = NodePath("CamaraPacMan:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.5, 1.5 ) ]
-}
-
-[sub_resource type="Animation" id=9]
 resource_name = "Zoom in"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -256,7 +226,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=8]
 resource_name = "Zoom out"
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:zoom")
@@ -271,42 +241,36 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
 }
 
-[node name="Pacman" type="KinematicBody2D" groups=[
-"Pacman",
-]]
-position = Vector2( 96, 96 )
+[node name="Pacman" type="KinematicBody2D"]
 collision_layer = 8
 collision_mask = 7
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+velocidad = 250
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="SpritePacman" type="Sprite" parent="."]
-texture = ExtResource( 2 )
+[node name="DeteccionObstaculos" type="RayCast2D" parent="."]
+enabled = true
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
 vframes = 3
 hframes = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="AnimacionPacman" type="AnimationPlayer" parent="."]
+[node name="Animacion" type="AnimationPlayer" parent="Sprite"]
 "anims/Caminar abajo" = SubResource( 2 )
 "anims/Caminar arriba" = SubResource( 3 )
 "anims/Caminar derecha" = SubResource( 4 )
 "anims/Caminar izquierda" = SubResource( 5 )
 "anims/Posicion inicial" = SubResource( 6 )
-"anims/Zoom in" = SubResource( 7 )
-"anims/Zoom out" = SubResource( 8 )
-
-[node name="DeteccionObstaculos" type="RayCast2D" parent="."]
-enabled = true
-script = ExtResource( 3 )
 
 [node name="CamaraPacMan" type="Camera2D" parent="."]
+editor/display_folded = true
 current = true
 zoom = Vector2( 1.25, 1.25 )
 limit_left = 0
@@ -319,10 +283,9 @@ offset_h = 1.0
 script = ExtResource( 4 )
 
 [node name="AnimacionCamara" type="AnimationPlayer" parent="CamaraPacMan"]
-"anims/Zoom in" = SubResource( 9 )
-"anims/Zoom out" = SubResource( 10 )
+"anims/Zoom in" = SubResource( 7 )
+"anims/Zoom out" = SubResource( 8 )
 
 [node name="PowerUpTimer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
-[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]

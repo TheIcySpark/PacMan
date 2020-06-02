@@ -18,6 +18,10 @@ _global_script_class_icons={
 config/name="PacMan"
 config/icon="res://icon.png"
 
+[autoload]
+
+gJugador="*res://Scripts/Globales/gJugador.gd"
+
 [input]
 
 ui_arriba={

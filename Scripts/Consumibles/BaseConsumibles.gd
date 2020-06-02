@@ -1,6 +1,8 @@
 extends Area2D
-onready var puntaje=get_tree().get_nodes_in_group("Puntaje").front()
 
-func Consumido(puntos: int)->void:
-	puntaje.set_puntaje(puntaje.get_puntaje()+puntos)
+func _ready() -> void:
+	connect("body_entered", self, "Consumido")
+
+func Consumido(body: KinematicBody2D)-> void:
+	gJugador.puntaje+=1
 	queue_free()
