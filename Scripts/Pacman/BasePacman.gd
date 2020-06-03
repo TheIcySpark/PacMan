@@ -4,6 +4,7 @@ onready var posInicial: Vector2= self.position
 onready var deteccionObstaculos: RayCast2D= $DeteccionObstaculos
 onready var animacion: AnimationPlayer= $Sprite/Animacion
 onready var timerPowerUp: Timer= $PowerUpTimer
+onready var camara: Camera2D= $CamaraPacMan
 var mapAnimacion: Dictionary= {Vector2.UP: "Caminar arriba", Vector2.RIGHT: "Caminar derecha", Vector2.DOWN: "Caminar abajo",
 							Vector2.LEFT: "Caminar izquierda"}
 var tamTile: int= 64
@@ -13,7 +14,14 @@ onready var idealPosActual: Vector2= self.position
 onready var idealPosSig: Vector2= self.position
 
 func set_powerUp(pU: bool)-> void:
-	if timerPowerUp.get_time_left()>0: timerPowerUp.set_time()
+	if pU==true:
+		if timerPowerUp.get_time_left()<10: camara.ZoomOut()
+		timerPowerUp.start(10)
+		gJugador.powerUp=true
+	else:
+		timerPowerUp.stop()
+		gJugador.powerUp=false
+		camara.ZoomIn()
 
 func get_powerUp()-> bool:
 	return powerUp

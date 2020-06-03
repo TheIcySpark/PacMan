@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Nivel/ControlNivel.gd" type="Script" id=1]
 [ext_resource path="res://RecursosInternos/Tiles/PisoParedes.tres" type="TileSet" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Escenas/Pacman.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Escenas/GUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Escenas/Fantasmas/BOBO.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Escenas/Consumibles/PowerUp.tscn" type="PackedScene" id=7]
 
 [node name="Nivel 1" type="Node2D"]
 script = ExtResource( 1 )
@@ -27,3 +28,27 @@ position = Vector2( 32, 96 )
 [node name="BOBO" parent="Fantasmas" instance=ExtResource( 6 )]
 editor/display_folded = true
 position = Vector2( 608, 160 )
+
+[node name="BOBO2" parent="Fantasmas" instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 1056, 288 )
+
+[node name="BOBO3" parent="Fantasmas" instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 1632, 224 )
+
+[node name="BOBO4" parent="Fantasmas" instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 608, 672 )
+
+[node name="BOBO5" parent="Fantasmas" instance=ExtResource( 6 )]
+editor/display_folded = true
+position = Vector2( 672, 416 )
+
+[node name="PowerUps" type="Node2D" parent="."]
+
+[node name="PowerUp" parent="PowerUps" instance=ExtResource( 7 )]
+position = Vector2( 1632, 864 )
+
+[node name="PowerUp3" parent="PowerUps" instance=ExtResource( 7 )]
+position = Vector2( 1632, 96 )

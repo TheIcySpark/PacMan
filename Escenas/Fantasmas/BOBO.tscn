@@ -6,7 +6,9 @@
 
 [node name="BOBO" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+velocidad = 150
 
 [node name="Sprite" parent="." index="2"]
+editor/display_folded = false
 texture = ExtResource( 3 )
 frame = 0

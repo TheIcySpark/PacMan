@@ -289,3 +289,4 @@ script = ExtResource( 4 )
 [node name="PowerUpTimer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
+[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]
