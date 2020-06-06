@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Pacman/DeteccionObstaculos.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Fantasmas/Cazador.png" type="Texture" id=2]
@@ -86,11 +86,7 @@ tracks/0/keys = {
 "values": [ 8, 9 ]
 }
 
-[sub_resource type="CapsuleShape2D" id=7]
-radius = 25.5806
-height = 5.80581
-
-[node name="Fantasma" type="KinematicBody2D"]
+[node name="Fantasma" type="Area2D"]
 collision_layer = 2
 collision_mask = 9
 
@@ -113,11 +109,3 @@ frame = 8
 "anims/Caminar derecha" = SubResource( 4 )
 "anims/Caminar izquierda" = SubResource( 5 )
 "anims/Caminar vulnerable" = SubResource( 6 )
-
-[node name="AreaColision" type="Area2D" parent="."]
-editor/display_folded = true
-collision_layer = 2
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaColision"]
-shape = SubResource( 7 )

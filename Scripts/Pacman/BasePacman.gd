@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 export (int) var velocidad
 onready var posInicial: Vector2= self.position
 onready var deteccionObstaculos: RayCast2D= $DeteccionObstaculos
@@ -37,9 +37,9 @@ func LeerDireccion()->Vector2:
 	elif Input.is_action_pressed("ui_izquierda"): return Vector2.LEFT
 	else: return Vector2.ZERO
 
-func Mover()-> void:
+func Mover(delta: float)-> void:
 	#Mueve una posicion en la direccion establecida
-	move_and_collide(direccion*velocidad*get_physics_process_delta_time())
+	position+= direccion* velocidad* delta
 	if get_position().distance_to(idealPosActual)>=tamTile:
 		set_position(idealPosSig)
 		idealPosActual=idealPosSig
@@ -69,5 +69,5 @@ func CalcularSiguientePosicion()-> void:
 			direccion=Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
-	if direccion!=Vector2.ZERO: Mover()
+	if direccion!=Vector2.ZERO: Mover(delta)
 	CalcularSiguientePosicion()

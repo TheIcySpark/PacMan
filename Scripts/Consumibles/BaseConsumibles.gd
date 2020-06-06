@@ -1,8 +1,8 @@
 extends Area2D
 
 func _ready() -> void:
-	connect("body_entered", self, "Consumido")
+	connect("area_entered", self, "Consumido")
 
-func Consumido(body: KinematicBody2D)-> void:
+func Consumido(area: Area2D)-> void:
 	gJugador.puntaje+=1
 	queue_free()
