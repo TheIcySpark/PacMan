@@ -8,9 +8,12 @@ onready var tween: Tween= $Tween
 var direccion: Vector2= Vector2.RIGHT
 onready var posActual: Vector2= position
 onready var posSig: Vector2= position
+onready var posInicial: Vector2= position
 
 func _ready() -> void:
 	animacion.play("Inicializar")
+	tween.interpolate_property(camara, "zoom", Vector2(1.5, 1.5), Vector2(1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	tween.start()
 	EstablecerLimitesCamara()
 
 func EstablecerLimitesCamara()-> void:
@@ -84,6 +87,7 @@ func _physics_process(delta: float) -> void:
 	ObtenerSiguientePosicion()
 
 func IniciarPowerUp()-> void:
+	gPacman.powerUp=true
 	timerPowerUp.start(10)
 	tween.interpolate_property(camara, "zoom", camara.zoom, Vector2(1.5, 1.5), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
 	tween.start()
@@ -91,6 +95,14 @@ func IniciarPowerUp()-> void:
 
 
 func _on_TiempoPowerUp_timeout() -> void:
+	gPacman.powerUp=false
 	tween.interpolate_property(camara, "zoom", camara.zoom, Vector2(1, 1), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
 	tween.start()
 	velocidad=250
+
+
+func _on_Pacman_area_entered(area: Area2D) -> void:
+	if not gPacman.powerUp:
+		position= posInicial
+		posActual= posInicial
+		posSig= posInicial
