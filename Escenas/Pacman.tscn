@@ -1,15 +1,10 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Pacman/Pacman.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/Pacman/DeteccionObstaculos.gd" type="Script" id=2]
-[ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=3]
-[ext_resource path="res://Scripts/Pacman/CamaraPacMan.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 25.1848, 28.5696 )
-
-[sub_resource type="Animation" id=2]
-resource_name = "Caminar abajo"
+[sub_resource type="Animation" id=1]
+resource_name = "Caminar"
 length = 0.6
 loop = true
 tracks/0/type = "value"
@@ -23,157 +18,11 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 90.0 ]
 }
 
 [sub_resource type="Animation" id=3]
-resource_name = "Caminar arriba"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 270.0 ]
-}
-
-[sub_resource type="Animation" id=4]
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=5]
-resource_name = "Caminar izquierda"
-length = 0.6
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:flip_h")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "Posicion inicial"
-length = 0.1
+resource_name = "Inicializar"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -186,104 +35,29 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:rotation_degrees")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0.0 ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:flip_h")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
 
-[sub_resource type="Animation" id=7]
-resource_name = "Zoom in"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1.25, 1.25 ), Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-resource_name = "Zoom out"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:zoom")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.25, 1.25 ) ]
-}
+[sub_resource type="CircleShape2D" id=2]
+radius = 26.692
 
 [node name="Pacman" type="Area2D"]
-collision_layer = 8
-collision_mask = 7
 script = ExtResource( 1 )
-velocidad = 250
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-
-[node name="DeteccionObstaculos" type="RayCast2D" parent="."]
-enabled = true
-script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+velocidad = 200
 
 [node name="Sprite" type="Sprite" parent="."]
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 vframes = 3
 hframes = 2
+frame = 1
 
 [node name="Animacion" type="AnimationPlayer" parent="Sprite"]
-"anims/Caminar abajo" = SubResource( 2 )
-"anims/Caminar arriba" = SubResource( 3 )
-"anims/Caminar derecha" = SubResource( 4 )
-"anims/Caminar izquierda" = SubResource( 5 )
-"anims/Posicion inicial" = SubResource( 6 )
+anims/Caminar = SubResource( 1 )
+anims/Inicializar = SubResource( 3 )
 
-[node name="CamaraPacMan" type="Camera2D" parent="."]
-editor/display_folded = true
+[node name="Colision" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Camara" type="Camera2D" parent="."]
 current = true
-zoom = Vector2( 1.25, 1.25 )
-limit_left = 0
-limit_top = 0
-limit_smoothed = true
-smoothing_enabled = true
-smoothing_speed = 2.0
-offset_v = 1.0
-offset_h = 1.0
-script = ExtResource( 4 )
-
-[node name="AnimacionCamara" type="AnimationPlayer" parent="CamaraPacMan"]
-"anims/Zoom in" = SubResource( 7 )
-"anims/Zoom out" = SubResource( 8 )
-
-[node name="PowerUpTimer" type="Timer" parent="."]
-wait_time = 10.0
-one_shot = true
-[connection signal="timeout" from="PowerUpTimer" to="." method="_on_PowerUpTimer_timeout"]

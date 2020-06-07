@@ -1,14 +1,10 @@
-[gd_resource type="TileSet" load_steps=5 format=2]
+[gd_resource type="TileSet" load_steps=4 format=2]
 
 [ext_resource path="res://Sprites/Paredes/Paredes.png" type="Texture" id=1]
 [ext_resource path="res://Sprites/Pisos/Pacman piso.png" type="Texture" id=2]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-
-[sub_resource type="NavigationPolygon" id=2]
-vertices = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
-polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 
 [resource]
 0/name = "Paredes.png 0"
@@ -35,6 +31,5 @@ polygons = [ PoolIntArray( 0, 1, 2, 3 ) ]
 1/tile_mode = 0
 1/occluder_offset = Vector2( 0, 0 )
 1/navigation_offset = Vector2( 0, 0 )
-1/navigation = SubResource( 2 )
 1/shapes = [  ]
 1/z_index = 0
