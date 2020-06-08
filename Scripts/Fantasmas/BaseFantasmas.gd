@@ -14,6 +14,12 @@ func Choque(area: Area2D):
 	if gPacman.powerUp:
 		queue_free()
 
+func Mover(delta: float)-> void:
+	position+= direccion* velocidad* delta
+	if posActual.distance_to(position)>=64:
+		position= posSig
+		posActual= posSig
+
 func _physics_process(delta: float) -> void:
 	if gPacman.powerUp:
 		animacion.play("Caminar vulnerable")

@@ -11,6 +11,7 @@ onready var posSig: Vector2= position
 onready var posInicial: Vector2= position
 
 func _ready() -> void:
+	gPacman.posicion= posSig
 	animacion.play("Inicializar")
 	tween.interpolate_property(camara, "zoom", Vector2(1.5, 1.5), Vector2(1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
 	tween.start()
@@ -37,6 +38,7 @@ func Mover(delta: float)-> void:
 	if posActual.distance_to(position)>=64:
 		position= posSig
 		posActual= posSig
+	gPacman.posicion= posSig
 
 func EstablecerAnimacion(direccionAnterior: Vector2)-> void:
 	animacion.play("Caminar")
