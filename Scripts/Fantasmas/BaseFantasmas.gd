@@ -20,6 +20,12 @@ func Mover(delta: float)-> void:
 		position= posSig
 		posActual= posSig
 
+func ObtenerDireccion()-> Vector2:
+	return Vector2.ZERO
+
+func ObtenerSiguientePosicion()-> void:
+	pass
+
 func _physics_process(delta: float) -> void:
 	if gPacman.powerUp:
 		animacion.play("Caminar vulnerable")

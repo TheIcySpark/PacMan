@@ -12,7 +12,7 @@ func ObtenerDireccion()-> Vector2:
 		3: return Vector2.LEFT
 		4: return Vector2.ZERO
 
-func EstablecerSiguienteDireccion()-> void:
+func ObtenerSiguientePosicion()-> void:
 	direccion= ObtenerDireccion()
 	if gMapa.PosicionValida(posActual+ direccion* 64):
 		posSig= posActual+ direccion* 64
@@ -20,4 +20,4 @@ func EstablecerSiguienteDireccion()-> void:
 
 func _physics_process(delta: float) -> void:
 	if posActual!= posSig: Mover(delta)
-	if posActual== posSig: EstablecerSiguienteDireccion()
+	if posActual== posSig: ObtenerSiguientePosicion()
