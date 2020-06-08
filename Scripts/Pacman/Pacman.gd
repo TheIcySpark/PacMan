@@ -77,7 +77,7 @@ func ObtenerSiguientePosicion()-> void:
 				posSig= posActual+ direccion* 64
 	elif posSig+ nuevaDireccion* 64== posActual:
 		#Cambio de direccion valido
-		var intercambio: Vector2= posActual
+		var intercambio: Vector2= posSig
 		posSig= posActual
 		posActual= intercambio
 		direccion= nuevaDireccion
