@@ -15,6 +15,9 @@ tile_data = PoolIntArray( 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 
 [node name="Pacman" parent="." index="1"]
 position = Vector2( 96, 96 )
 
+[node name="Fantasmas" parent="." index="2"]
+editor/display_folded = true
+
 [node name="CAZADOR" parent="Fantasmas" index="0" instance=ExtResource( 2 )]
 position = Vector2( 96, 736 )
 
@@ -26,6 +29,9 @@ position = Vector2( 800, 736 )
 
 [node name="Emboscador" parent="Fantasmas" index="3" instance=ExtResource( 5 )]
 position = Vector2( 928, 736 )
+
+[node name="PowerUps" parent="." index="3"]
+editor/display_folded = true
 
 [node name="PowerUp" parent="PowerUps" index="0" instance=ExtResource( 6 )]
 position = Vector2( 1056, 96 )
