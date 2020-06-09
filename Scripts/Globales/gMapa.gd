@@ -3,13 +3,23 @@ var tile: TileMap
 var cuadricula: Array= []
 var distancia: Array= []
 var movs: Array= [[64, 0], [0, 64], [-64, 0], [0, -64]]
+var actualizacion: Timer= Timer.new()
+
+signal Mapear(Posicion)
+
+func _ready() -> void:
+	connect("Mapear", self, "Mapear")
+	actualizacion.connect("timeout", self, "ActualizarMapa")
+	actualizacion.start(1)
+	add_child(actualizacion)
+
+func ActualizarMapa():
+	emit_signal("Mapear", gPacman.posicion)
 
 func PosicionValida(pos: Vector2)-> bool:
 	if tile.get_cellv(tile.world_to_map(pos))== 1: return true
 	else: return false
 
-func PosicionPacman()-> Vector2:
-	return gPacman.posicion
 
 func CrearCuadricula()-> void:
 	cuadricula= []
@@ -43,7 +53,7 @@ func InicializarDistancias()-> void:
 			j+=1
 		i+=1
 
-func Mapear(posA: Vector2, posB: Vector2)-> void:
+func Mapear(posA: Vector2)-> void:
 	InicializarDistancias()
 	var cola: Array= []
 	var actual: Vector2
@@ -68,5 +78,4 @@ func Mapear(posA: Vector2, posB: Vector2)-> void:
 			if distancia[posNuevo.y][posNuevo.x]==1000000 and cuadricula[posNuevo.y][posNuevo.x]==1 :
 				distancia[posNuevo.y][posNuevo.x]=distancia[posActual.y][posActual.x]+1
 				cola.push_back(nuevo)
-				if nuevo==posB: return
 			i+=1
