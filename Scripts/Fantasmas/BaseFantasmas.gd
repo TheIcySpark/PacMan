@@ -41,7 +41,7 @@ func ObtenerSiguientePosicionPacman()-> void:
 	direccion= ObtenerDireccionPacman()
 	if direccion!= Vector2.ZERO:
 		posSig= posActual+ direccion* 64
-		animacion.play(mapAnim[direccion])
+		if not gPacman.powerUp: animacion.play(mapAnim[direccion])
 
 func ObtenerDireccionHuida():
 	var posCuadricula: Vector2= gMapa.tile.world_to_map(position)
@@ -64,8 +64,22 @@ func ObtenerSiguientePosicionHuida():
 	direccion= ObtenerDireccionHuida()
 	if direccion!= Vector2.ZERO:
 		posSig= posActual+ direccion* 64
-		animacion.play(mapAnim[direccion])
+		if not gPacman.powerUp: animacion.play(mapAnim[direccion])
+
+func ObtenerDireccionAleatoria():
+	var aleatorio=randi()%5
+	match aleatorio:
+		0: return Vector2.UP
+		1: return Vector2.RIGHT
+		2: return Vector2.DOWN
+		3: return Vector2.LEFT
+		4: return Vector2.ZERO
+
+func ObtenerSiguientePosicionAleatoria():
+	direccion= ObtenerDireccionAleatoria()
+	if gMapa.PosicionValida(posActual+ direccion* 64):
+		posSig= posActual+ direccion* 64
+		if not gPacman.powerUp: animacion.play(mapAnim[direccion])
 
 func _physics_process(delta: float) -> void:
-	if gPacman.powerUp:
-		animacion.play("Caminar vulnerable")
+	if gPacman.powerUp: animacion.play("Caminar vulnerable")

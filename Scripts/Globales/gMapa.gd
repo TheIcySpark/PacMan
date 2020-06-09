@@ -10,7 +10,7 @@ signal Mapear(Posicion)
 func _ready() -> void:
 	connect("Mapear", self, "Mapear")
 	actualizacion.connect("timeout", self, "ActualizarMapa")
-	actualizacion.start(1)
+	actualizacion.start(0.5)
 	add_child(actualizacion)
 
 func ActualizarMapa():
