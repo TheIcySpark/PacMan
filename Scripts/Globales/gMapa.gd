@@ -14,15 +14,16 @@ func _ready() -> void:
 	add_child(actualizacion)
 
 func ActualizarMapa()-> void:
-	if tile== null: return
 	emit_signal("Mapear", gPacman.posicion)
 
 func PosicionValida(pos: Vector2)-> bool:
+	if tile== null: return false
 	if tile.get_cellv(tile.world_to_map(pos))== 1: return true
 	else: return false
 
 
 func CrearCuadricula()-> void:
+	if tile== null: return
 	cuadricula= []
 	distancia= []
 	var limites: Rect2= tile.get_used_rect()
@@ -55,6 +56,7 @@ func InicializarDistancias()-> void:
 		i+=1
 
 func Mapear(posA: Vector2)-> void:
+	if tile== null: return
 	InicializarDistancias()
 	var cola: Array= []
 	var actual: Vector2

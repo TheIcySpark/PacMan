@@ -14,25 +14,28 @@ columns = 3
 
 [node name="BotonSeleccionNivel" parent="GridContainer" instance=ExtResource( 1 )]
 margin_bottom = 98.0
-disabled = false
-escena = "res://Escenas/Niveles/NivelPruebas1.tscn"
+escena = "res://Escenas/Niveles/Nivel1.tscn"
 
 [node name="BotonSeleccionNivel2" parent="GridContainer" instance=ExtResource( 1 )]
 margin_left = 68.0
 margin_right = 132.0
 margin_bottom = 98.0
+escena = "res://Escenas/Niveles/Nivel2.tscn"
 
 [node name="BotonSeleccionNivel3" parent="GridContainer" instance=ExtResource( 1 )]
 margin_left = 136.0
 margin_right = 200.0
 margin_bottom = 98.0
+escena = "res://Escenas/Niveles/Nivel3.tscn"
 
 [node name="BotonSeleccionNivel4" parent="GridContainer" instance=ExtResource( 1 )]
 margin_top = 102.0
 margin_bottom = 200.0
+escena = "res://Escenas/Niveles/Nivel4.tscn"
 
 [node name="BotonSeleccionNivel5" parent="GridContainer" instance=ExtResource( 1 )]
 margin_left = 68.0
 margin_top = 102.0
 margin_right = 132.0
 margin_bottom = 200.0
+escena = "res://Escenas/Niveles/Nivel5.tscn"
