@@ -13,7 +13,8 @@ func _ready() -> void:
 	actualizacion.start(0.5)
 	add_child(actualizacion)
 
-func ActualizarMapa():
+func ActualizarMapa()-> void:
+	if tile== null: return
 	emit_signal("Mapear", gPacman.posicion)
 
 func PosicionValida(pos: Vector2)-> bool:

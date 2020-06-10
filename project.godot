@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 gMapa="*res://Scripts/Globales/gMapa.gd"
 gPacman="*res://Scripts/Globales/gPacman.gd"
+gGuardado="*res://Scripts/Globales/gGuardado.gd"
 
 [display]
 

@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/Niveles/Seleccion nivel/BotonSeleccionNivel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/Niveles/Nivel4.tscn" type="PackedScene" id=2]
+
+[node name="SeleccionNivel" type="Control"]
+
+[node name="GridContainer" type="GridContainer" parent="."]
+anchor_right = 1.0
+margin_right = 200.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 64, 64 )
+size_flags_stretch_ratio = 0.0
+columns = 3
+
+[node name="BotonSeleccionNivel" parent="GridContainer" instance=ExtResource( 1 )]
+margin_bottom = 98.0
+disabled = false
+escena = ExtResource( 2 )
+
+[node name="BotonSeleccionNivel2" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 68.0
+margin_right = 132.0
+margin_bottom = 98.0
+escena = ExtResource( 2 )
+
+[node name="BotonSeleccionNivel3" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 136.0
+margin_right = 200.0
+margin_bottom = 98.0
+escena = ExtResource( 2 )
+
+[node name="BotonSeleccionNivel4" parent="GridContainer" instance=ExtResource( 1 )]
+margin_top = 102.0
+margin_bottom = 200.0
+escena = ExtResource( 2 )
+
+[node name="BotonSeleccionNivel5" parent="GridContainer" instance=ExtResource( 1 )]
+margin_left = 68.0
+margin_top = 102.0
+margin_right = 132.0
+margin_bottom = 200.0
+escena = ExtResource( 2 )
