@@ -1,6 +1,7 @@
 extends "res://Scripts/Fantasmas/BaseFantasmas.gd"
 
 func _physics_process(delta: float) -> void:
+	if gMapa.tile== null: return
 	if posActual!= posSig: Mover(delta)
 	if posActual== posSig:
 		if gPacman.powerUp:

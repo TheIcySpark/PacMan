@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Niveles/Nivel.gd" type="Script" id=1]
 [ext_resource path="res://RecursosInternos/Tiles/PisoParedes.tres" type="TileSet" id=2]
 [ext_resource path="res://Scripts/Tiles/MapaTiles.gd" type="Script" id=3]
 [ext_resource path="res://Escenas/Pacman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenas/Pausa/Pausa.tscn" type="PackedScene" id=5]
 
 [node name="NivelBase" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,3 +19,5 @@ script = ExtResource( 3 )
 [node name="Fantasmas" type="Node2D" parent="."]
 
 [node name="PowerUps" type="Node2D" parent="."]
+
+[node name="Pausa" parent="." instance=ExtResource( 5 )]
