@@ -8,7 +8,9 @@
 [ext_resource path="res://Sprites/Otros/Rombo.png" type="Texture" id=6]
 [ext_resource path="res://RecursosInternos/Letras/Minecart.tres" type="DynamicFont" id=7]
 
-[node name="BotonSeleccionNivel" type="TextureButton"]
+[node name="BotonSeleccionNivel" type="TextureButton" groups=[
+"guardar",
+]]
 margin_right = 64.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 64, 96 )
@@ -22,7 +24,6 @@ texture_disabled = ExtResource( 4 )
 script = ExtResource( 5 )
 
 [node name="Completado" type="TextureRect" parent="."]
-modulate = Color( 0, 0, 0, 1 )
 margin_left = 16.0
 margin_top = 64.0
 margin_right = 48.0
