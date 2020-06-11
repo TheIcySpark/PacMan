@@ -7,3 +7,4 @@ func CambiarEscena(nuevaEscena: String)-> void:
 	get_tree().change_scene(nuevaEscena)
 	animacion.play_backwards("Desaparecer")
 	yield(animacion, "animation_finished")
+	get_tree().set_pause(false)

@@ -17,4 +17,5 @@ func FinJuego()-> void:
 	#Guardar parametros
 	#Cambiar escena
 	gMapa.tile= null
+	get_tree().set_pause(true)
 	gCambiadorEscena.CambiarEscena(seleccionNivel)
