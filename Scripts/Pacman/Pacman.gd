@@ -11,6 +11,7 @@ onready var posSig: Vector2= position
 onready var posInicial: Vector2= position
 
 func _ready() -> void:
+	gPacman.powerUp= false
 	gPacman.posicion= posSig
 	animacion.play("Inicializar")
 	tween.interpolate_property(camara, "zoom", Vector2(1.5, 1.5), Vector2(1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
