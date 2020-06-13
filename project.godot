@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="PacMan"
-run/main_scene="res://Escenas/Niveles/Nivel 1.tscn"
+run/main_scene="res://Escenas/Niveles/Seleccion nivel/SeleccionNivel.tscn"
 config/icon="res://icon.png"
 
 [autoload]
