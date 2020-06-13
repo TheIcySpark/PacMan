@@ -1,6 +1,6 @@
 extends Node2D
 export var seleccionNivel: String= "res://Escenas/Niveles/Seleccion nivel/SeleccionNivel.tscn"
-onready var pausa: Control= $Pausa/Control
+onready var pausa: Control= $Pausa
 
 func _ready() -> void:
 	gMapa.CrearCuadricula()
@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action("ui_pausa"):
-		pausa.visible= true
+		pausa.Pausar()
 		get_tree().set_pause(true)
 
 func FinJuego()-> void:

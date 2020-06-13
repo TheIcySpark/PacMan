@@ -1,8 +1,14 @@
 extends CanvasLayer
 onready var control: Control= $Control
+onready var musica: AudioStreamPlayer2D= $Control/Musica
+
+func Pausar()-> void:
+	control.visible= true
+	musica.play()
 
 func _on_Continuar_button_up() -> void:
 	get_tree().set_pause(false)
+	musica.stop()
 	control.visible= false
 
 
