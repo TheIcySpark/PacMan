@@ -27,3 +27,6 @@ script = ExtResource( 3 )
 stream = ExtResource( 6 )
 volume_db = 1.0
 autoplay = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )

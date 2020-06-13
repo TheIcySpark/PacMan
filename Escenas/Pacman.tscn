@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Pacman/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
 [ext_resource path="res://MusicaSonidos/wort-wort-wort.wav" type="AudioStream" id=3]
 [ext_resource path="res://MusicaSonidos/WAKAWAKA.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sprites/Luces/Luz1.jpg" type="Texture" id=5]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Caminar"
@@ -51,6 +52,7 @@ __meta__ = {
 velocidad = 250
 
 [node name="Sprite" type="Sprite" parent="."]
+editor/display_folded = true
 texture = ExtResource( 2 )
 vframes = 3
 hframes = 2
@@ -77,5 +79,10 @@ stream = ExtResource( 3 )
 
 [node name="SonidoComiendo" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Luz" type="Light2D" parent="."]
+texture = ExtResource( 5 )
+texture_scale = 5.0
+shadow_enabled = true
 [connection signal="area_entered" from="." to="." method="_on_Pacman_area_entered"]
 [connection signal="timeout" from="TiempoPowerUp" to="." method="_on_TiempoPowerUp_timeout"]
