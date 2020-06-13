@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/wort-wort-wort.wav-f71b03a3a041fcb99cd353b80d337073.sample"
+
+[deps]
+
+source_file="res://MusicaSonidos/wort-wort-wort.wav"
+dest_files=[ "res://.import/wort-wort-wort.wav-f71b03a3a041fcb99cd353b80d337073.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -9,6 +9,8 @@ var direccion: Vector2= Vector2.RIGHT
 onready var posActual: Vector2= position
 onready var posSig: Vector2= position
 onready var posInicial: Vector2= position
+onready var sonidoComiendo: AudioStreamPlayer2D= $SonidoComiendo
+onready var sonidoMuerte: AudioStreamPlayer2D= $SonidoMuerte
 
 func _ready() -> void:
 	gPacman.powerUp= false
@@ -103,8 +105,11 @@ func _on_TiempoPowerUp_timeout() -> void:
 	tween.start()
 	velocidad=250
 
+func Comiendo()-> void:
+	sonidoComiendo.play(3.2)
 
 func _on_Pacman_area_entered(area: Area2D) -> void:
 	if not gPacman.powerUp:
 		#Muerte Pacman
-		get_tree().reload_current_scene()
+		sonidoMuerte.play()
+		gCambiadorEscena.CambiarEscena(gCambiadorEscena.escenaActual)
