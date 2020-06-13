@@ -106,6 +106,5 @@ func _on_TiempoPowerUp_timeout() -> void:
 
 func _on_Pacman_area_entered(area: Area2D) -> void:
 	if not gPacman.powerUp:
-		position= posInicial
-		posActual= posInicial
-		posSig= posInicial
+		#Muerte Pacman
+		get_tree().reload_current_scene()
