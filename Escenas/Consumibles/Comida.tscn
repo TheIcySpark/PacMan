@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Consumibles/Comida.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Consumibles/Comida.png" type="Texture" id=3]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=2]
 radius = 8.21155
 
 [node name="Comida" instance=ExtResource( 1 )]
@@ -15,4 +15,4 @@ texture = ExtResource( 3 )
 
 [node name="Colision" parent="." index="1"]
 position = Vector2( -0.814499, -1.62901 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )

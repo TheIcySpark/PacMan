@@ -3,6 +3,7 @@ export var velocidad: int
 onready var animacion: AnimationPlayer= $Sprite/Animacion
 onready var posActual: Vector2= position
 onready var posSig: Vector2= position
+onready var sonidoMuerte: AudioStreamPlayer2D= $SonidoMuerte
 var direccion: Vector2= Vector2.ZERO
 var mapAnim: Dictionary= {Vector2.ZERO: "Caminar arriba", Vector2.UP: "Caminar arriba", 
 						Vector2.RIGHT: "Caminar derecha", Vector2.DOWN: "Caminar derecha", Vector2.LEFT: "Caminar izquierda" }
@@ -12,6 +13,10 @@ func _ready() -> void:
 
 func Choque(area: Area2D):
 	if gPacman.powerUp:
+		sonidoMuerte.play()
+		get_tree().set_pause(true)
+		yield(get_tree().create_timer(1),"timeout")
+		get_tree().set_pause(false)
 		queue_free()
 
 func Mover(delta: float)-> void:

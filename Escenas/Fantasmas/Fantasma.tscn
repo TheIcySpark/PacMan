@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Sprites/Fantasmas/Bobo.png" type="Texture" id=1]
+[ext_resource path="res://MusicaSonidos/wort-wort-wort.wav" type="AudioStream" id=2]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Caminar abajo"
@@ -110,3 +111,7 @@ frame = 4
 
 [node name="Colision" type="CollisionShape2D" parent="."]
 shape = SubResource( 6 )
+
+[node name="SonidoMuerte" type="AudioStreamPlayer2D" parent="."]
+pause_mode = 2
+stream = ExtResource( 2 )
