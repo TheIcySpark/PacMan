@@ -68,10 +68,10 @@ shape = SubResource( 3 )
 [node name="Camara" type="Camera2D" parent="."]
 current = true
 
+[node name="Animacion" type="Tween" parent="Camara"]
+
 [node name="TiempoPowerUp" type="Timer" parent="."]
 one_shot = true
-
-[node name="Tween" type="Tween" parent="."]
 
 [node name="SonidoMuerte" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2
@@ -84,5 +84,7 @@ stream = ExtResource( 4 )
 texture = ExtResource( 5 )
 texture_scale = 5.0
 shadow_enabled = true
+
+[node name="Animacion" type="Tween" parent="Luz"]
 [connection signal="area_entered" from="." to="." method="_on_Pacman_area_entered"]
 [connection signal="timeout" from="TiempoPowerUp" to="." method="_on_TiempoPowerUp_timeout"]

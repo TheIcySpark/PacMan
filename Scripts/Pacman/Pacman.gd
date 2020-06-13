@@ -4,8 +4,10 @@ onready var animacion: AnimationPlayer= $Sprite/Animacion
 onready var sprite: Sprite= $Sprite
 onready var camara: Camera2D= $Camara
 onready var timerPowerUp: Timer= $TiempoPowerUp
-onready var tween: Tween= $Tween
+onready var animacionCamara: Tween= $Camara/Animacion
+onready var animacionLuz: Tween= $Luz/Animacion
 var direccion: Vector2= Vector2.RIGHT
+onready var luz: Light2D= $Luz
 onready var posActual: Vector2= position
 onready var posSig: Vector2= position
 onready var posInicial: Vector2= position
@@ -16,8 +18,8 @@ func _ready() -> void:
 	gPacman.powerUp= false
 	gPacman.posicion= posSig
 	animacion.play("Inicializar")
-	tween.interpolate_property(camara, "zoom", Vector2(1.5, 1.5), Vector2(1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
-	tween.start()
+	animacionCamara.interpolate_property(camara, "zoom", Vector2(1.5, 1.5), Vector2(1, 1), 1, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	animacionCamara.start()
 	EstablecerLimitesCamara()
 
 func EstablecerLimitesCamara()-> void:
@@ -94,15 +96,25 @@ func _physics_process(delta: float) -> void:
 func IniciarPowerUp()-> void:
 	gPacman.powerUp=true
 	timerPowerUp.start(10)
-	tween.interpolate_property(camara, "zoom", camara.zoom, Vector2(1.5, 1.5), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
-	tween.start()
+	animacionCamara.interpolate_property(camara, "zoom", camara.zoom, Vector2(1.5, 1.5), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
+	animacionCamara.start()
+	
+	animacionLuz.interpolate_property(luz, "color", luz.color, Color(1,0.84,0), 1, Tween.TRANS_BACK, Tween.EASE_IN)
+	animacionLuz.start()
+	luz.set_shadow_enabled(false)
+	
 	velocidad+= 70
 
 
 func _on_TiempoPowerUp_timeout() -> void:
 	gPacman.powerUp=false
-	tween.interpolate_property(camara, "zoom", camara.zoom, Vector2(1, 1), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
-	tween.start()
+	animacionCamara.interpolate_property(camara, "zoom", camara.zoom, Vector2(1, 1), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
+	animacionCamara.start()
+	
+	animacionLuz.interpolate_property(luz, "color", luz.color, Color(1,1,1), 1, Tween.TRANS_BACK, Tween.EASE_IN)
+	animacionLuz.start()
+	luz.set_shadow_enabled(true)
+	
 	velocidad=250
 
 func Comiendo()-> void:
