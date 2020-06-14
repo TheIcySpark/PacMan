@@ -29,4 +29,4 @@ volume_db = 1.0
 autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )

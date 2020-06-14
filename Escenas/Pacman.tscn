@@ -83,7 +83,9 @@ stream = ExtResource( 4 )
 [node name="Luz" type="Light2D" parent="."]
 texture = ExtResource( 5 )
 texture_scale = 5.0
+range_z_min = -1020
 shadow_enabled = true
+shadow_gradient_length = 5.0
 
 [node name="Animacion" type="Tween" parent="Luz"]
 [connection signal="area_entered" from="." to="." method="_on_Pacman_area_entered"]

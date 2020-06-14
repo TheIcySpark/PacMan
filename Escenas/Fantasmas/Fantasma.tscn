@@ -95,6 +95,9 @@ height = 1.00574
 [node name="Fantasma" type="Area2D"]
 collision_layer = 2
 collision_mask = 8
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )

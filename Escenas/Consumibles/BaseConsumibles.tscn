@@ -4,6 +4,9 @@
 monitorable = false
 collision_layer = 0
 collision_mask = 8
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 
