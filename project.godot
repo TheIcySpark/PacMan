@@ -72,4 +72,5 @@ ui_pausa={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0196078, 0.203922, 0.521569, 1 )
 environment/default_environment="res://default_env.tres"

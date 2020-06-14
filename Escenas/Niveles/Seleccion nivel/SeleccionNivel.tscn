@@ -29,42 +29,51 @@ size_flags_stretch_ratio = 0.0
 columns = 3
 
 [node name="BotonSeleccionNivel" parent="GridContainer" instance=ExtResource( 3 )]
+margin_bottom = 97.0
 escena = "res://Escenas/Niveles/Nivel1.tscn"
 nivel = 1
 
 [node name="BotonSeleccionNivel2" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 68.0
 margin_right = 132.0
+margin_bottom = 97.0
 escena = "res://Escenas/Niveles/Nivel2.tscn"
 nivel = 2
 
 [node name="BotonSeleccionNivel3" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 136.0
 margin_right = 200.0
+margin_bottom = 97.0
 escena = "res://Escenas/Niveles/Nivel3.tscn"
 nivel = 3
 
 [node name="BotonSeleccionNivel4" parent="GridContainer" instance=ExtResource( 3 )]
-margin_top = 100.0
-margin_bottom = 196.0
+margin_top = 101.0
+margin_bottom = 198.0
 escena = "res://Escenas/Niveles/Nivel4.tscn"
 nivel = 4
 
 [node name="BotonSeleccionNivel5" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 68.0
-margin_top = 100.0
+margin_top = 101.0
 margin_right = 132.0
-margin_bottom = 196.0
+margin_bottom = 198.0
 escena = "res://Escenas/Niveles/Nivel5.tscn"
 nivel = 5
 
 [node name="BotonSeleccionNivel6" parent="GridContainer" instance=ExtResource( 3 )]
 margin_left = 136.0
-margin_top = 100.0
+margin_top = 101.0
 margin_right = 200.0
-margin_bottom = 196.0
+margin_bottom = 198.0
 escena = "res://Escenas/Niveles/Nivel6.tscn"
 nivel = 6
+
+[node name="BotonSeleccionNivel7" parent="GridContainer" instance=ExtResource( 3 )]
+margin_top = 202.0
+margin_bottom = 299.0
+escena = "res://Escenas/Niveles/Nivel7.tscn"
+nivel = 7
 
 [node name="Musica" type="AudioStreamPlayer2D" parent="."]
 pause_mode = 2

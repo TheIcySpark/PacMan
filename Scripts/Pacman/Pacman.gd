@@ -119,7 +119,7 @@ func _on_TiempoPowerUp_timeout() -> void:
 	velocidad=250
 
 func Comiendo()-> void:
-	sonidoComiendo.play(3.2)
+	if not sonidoComiendo.is_playing(): sonidoComiendo.play(3.2)
 
 func _on_Pacman_area_entered(area: Area2D) -> void:
 	if not gPacman.powerUp:
