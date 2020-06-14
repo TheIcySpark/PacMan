@@ -107,12 +107,13 @@ func IniciarPowerUp()-> void:
 
 
 func _on_TiempoPowerUp_timeout() -> void:
-	gPacman.powerUp=false
 	animacionCamara.interpolate_property(camara, "zoom", camara.zoom, Vector2(1, 1), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
 	animacionCamara.start()
 	
 	animacionLuz.interpolate_property(luz, "color", luz.color, Color(1,1,1), 1, Tween.TRANS_BACK, Tween.EASE_IN)
 	animacionLuz.start()
+	yield(get_tree().create_timer(1), "timeout")
+	gPacman.powerUp=false
 	luz.set_shadow_enabled(true)
 	
 	velocidad=250
