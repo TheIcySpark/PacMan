@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Niveles/Nivel.gd" type="Script" id=1]
 [ext_resource path="res://RecursosInternos/Tiles/PisoParedes.tres" type="TileSet" id=2]
@@ -6,6 +6,11 @@
 [ext_resource path="res://Escenas/Pacman.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Escenas/Pausa/Pausa.tscn" type="PackedScene" id=5]
 [ext_resource path="res://MusicaSonidos/HaloOst.wav" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/Botones/Boton-4.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Botones/Boton.png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 30.0
 
 [node name="NivelBase" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,3 +35,24 @@ autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+
+[node name="Botones" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Botones"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="Pausa" type="TouchScreenButton" parent="Botones/Control"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( -46.28, -382.68 )
+scale = Vector2( 1.5, 1.5 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 8 )
+shape = SubResource( 1 )
+action = "ui_pausa"
