@@ -13,6 +13,7 @@ onready var posSig: Vector2= position
 onready var posInicial: Vector2= position
 onready var sonidoComiendo: AudioStreamPlayer2D= $SonidoComiendo
 onready var sonidoMuerte: AudioStreamPlayer2D= $SonidoMuerte
+onready var particulas: CPUParticles2D= $Particulas
 
 func _ready() -> void:
 	gPacman.powerUp= false
@@ -126,3 +127,5 @@ func _on_Pacman_area_entered(area: Area2D) -> void:
 		#Muerte Pacman
 		sonidoMuerte.play()
 		gCambiadorEscena.CambiarEscena(gCambiadorEscena.escenaActual)
+	else:
+		particulas.restart()

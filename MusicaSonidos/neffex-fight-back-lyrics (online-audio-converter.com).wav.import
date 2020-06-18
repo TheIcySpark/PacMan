@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/neffex-fight-back-lyrics (online-audio-converter.com).wav-77ec652bf64567bc6230b6420a984b3e.sample"
+
+[deps]
+
+source_file="res://MusicaSonidos/neffex-fight-back-lyrics (online-audio-converter.com).wav"
+dest_files=[ "res://.import/neffex-fight-back-lyrics (online-audio-converter.com).wav-77ec652bf64567bc6230b6420a984b3e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

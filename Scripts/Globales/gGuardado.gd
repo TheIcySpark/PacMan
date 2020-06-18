@@ -1,5 +1,5 @@
 extends Node
-var rutaGuardado: String= "res://save.json"
+var rutaGuardado: String= "user://save.json"
 var nivel: int= 0
 var nivelTerminado: bool= false
 
@@ -18,11 +18,12 @@ func Guardar()-> void:
 
 func Cargar()-> void:
 	var archivo: File= File.new()
-	if not archivo.file_exists(rutaGuardado): return
+	if not archivo.file_exists(rutaGuardado): 
+		Guardar()
 	archivo.open(rutaGuardado, File.READ)
 	var informacion= {}
 	informacion= parse_json(archivo.get_as_text())
-	
+	informacion[informacion.keys()[0]]["disponible"]=true
 	for rutaNodo in informacion.keys():
 		var nodo= get_node(rutaNodo)
 		for atributo in informacion[rutaNodo]:

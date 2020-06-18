@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/Pacman/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Sprites/Luces/Luz1.jpg" type="Texture" id=5]
 [ext_resource path="res://Sprites/Botones/Boton-4.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Botones/Boton-2.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Particulas/Explision.png" type="Texture" id=8]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Caminar"
@@ -51,6 +52,9 @@ radius = 30.0
 collision_layer = 8
 collision_mask = 2
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 velocidad = 250
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -138,5 +142,17 @@ normal = ExtResource( 6 )
 pressed = ExtResource( 7 )
 shape = SubResource( 4 )
 action = "ui_izquierda"
+
+[node name="Particulas" type="CPUParticles2D" parent="."]
+emitting = false
+lifetime = 0.6
+one_shot = true
+local_coords = false
+texture = ExtResource( 8 )
+emission_shape = 3
+emission_points = PoolVector2Array(  )
+emission_colors = PoolColorArray(  )
+gravity = Vector2( 0, 64 )
+scale_amount = 0.03
 [connection signal="area_entered" from="." to="." method="_on_Pacman_area_entered"]
 [connection signal="timeout" from="TiempoPowerUp" to="." method="_on_TiempoPowerUp_timeout"]

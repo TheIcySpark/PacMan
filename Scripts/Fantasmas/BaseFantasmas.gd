@@ -15,9 +15,8 @@ func _ready() -> void:
 func Choque(area: Area2D):
 	if gPacman.powerUp:
 		sonidoMuerte.play()
-		get_tree().set_pause(true)
+		hide()
 		yield(get_tree().create_timer(1),"timeout")
-		get_tree().set_pause(false)
 		queue_free()
 
 func Mover(delta: float)-> void:
