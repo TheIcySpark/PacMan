@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Scripts/Niveles/Nivel.gd" type="Script" id=1]
 [ext_resource path="res://RecursosInternos/Tiles/PisoParedes.tres" type="TileSet" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://MusicaSonidos/HaloOst.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/Botones/Boton-4.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Botones/Boton.png" type="Texture" id=8]
+[ext_resource path="res://RecursosInternos/ComportamientoMundo/Comportamiento1.tres" type="Environment" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
@@ -34,11 +35,12 @@ volume_db = 2.0
 autoplay = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.00784314, 0.00784314, 0.00784314, 1 )
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
 
 [node name="Botones" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="Botones"]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -56,3 +58,6 @@ normal = ExtResource( 7 )
 pressed = ExtResource( 8 )
 shape = SubResource( 1 )
 action = "ui_pausa"
+
+[node name="ComportamientoMundo" type="WorldEnvironment" parent="."]
+environment = ExtResource( 9 )

@@ -4,6 +4,7 @@ onready var animacion: AnimationPlayer= $Sprite/Animacion
 onready var posActual: Vector2= position
 onready var posSig: Vector2= position
 onready var sonidoMuerte: AudioStreamPlayer2D= $SonidoMuerte
+onready var luz: Light2D= $Luz
 var direccion: Vector2= Vector2.ZERO
 var mapAnim: Dictionary= {Vector2.ZERO: "Caminar arriba", Vector2.UP: "Caminar arriba", 
 						Vector2.RIGHT: "Caminar derecha", Vector2.DOWN: "Caminar derecha", Vector2.LEFT: "Caminar izquierda" }
@@ -87,4 +88,7 @@ func ObtenerSiguientePosicionAleatoria():
 		if not gPacman.powerUp: animacion.play(mapAnim[direccion])
 
 func _physics_process(delta: float) -> void:
-	if gPacman.powerUp: animacion.play("Caminar vulnerable")
+	if gPacman.powerUp: 
+		animacion.play("Caminar vulnerable")
+		luz.set_enabled(true)
+	else: luz.set_enabled(false)
