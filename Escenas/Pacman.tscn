@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scripts/Pacman/Pacman.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/PacMan/Pacman.png" type="Texture" id=2]
@@ -47,6 +47,25 @@ radius = 26.692
 
 [sub_resource type="CircleShape2D" id=4]
 radius = 30.0
+
+[sub_resource type="Gradient" id=5]
+colors = PoolColorArray( 1, 0.832031, 0, 1, 1, 0, 0, 1 )
+
+[sub_resource type="GradientTexture" id=6]
+gradient = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 1
+emission_sphere_radius = 20.0
+flag_disable_z = true
+gravity = Vector3( 0, -98, 0 )
+angular_velocity = 90.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 5.0
+scale = 0.02
+color_ramp = SubResource( 6 )
 
 [node name="Pacman" type="Area2D"]
 collision_layer = 8
@@ -106,10 +125,13 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Arriba" type="TouchScreenButton" parent="Botones/Control"]
 modulate = Color( 1, 1, 1, 0.196078 )
-position = Vector2( -492, 100 )
+position = Vector2( -492, -6.62872 )
 scale = Vector2( 2.3125, 2.4375 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 7 )
@@ -118,7 +140,7 @@ action = "ui_arriba"
 
 [node name="Abajo" type="TouchScreenButton" parent="Botones/Control"]
 modulate = Color( 1, 1, 1, 0.196078 )
-position = Vector2( -492, 260 )
+position = Vector2( -492, 153.371 )
 scale = Vector2( 2.3125, 2.4375 )
 normal = ExtResource( 6 )
 pressed = ExtResource( 7 )
@@ -143,16 +165,14 @@ pressed = ExtResource( 7 )
 shape = SubResource( 4 )
 action = "ui_izquierda"
 
-[node name="Particulas" type="CPUParticles2D" parent="."]
+[node name="Particulas" type="Particles2D" parent="."]
 emitting = false
-lifetime = 0.6
+amount = 5
+lifetime = 2.0
 one_shot = true
+explosiveness = 0.7
 local_coords = false
+process_material = SubResource( 7 )
 texture = ExtResource( 8 )
-emission_shape = 3
-emission_points = PoolVector2Array(  )
-emission_colors = PoolColorArray(  )
-gravity = Vector2( 0, 64 )
-scale_amount = 0.03
 [connection signal="area_entered" from="." to="." method="_on_Pacman_area_entered"]
 [connection signal="timeout" from="TiempoPowerUp" to="." method="_on_TiempoPowerUp_timeout"]

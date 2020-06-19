@@ -107,6 +107,12 @@ func IniciarPowerUp()-> void:
 	velocidad+= 70
 
 
+func NuevaPosicion(pos: Vector2)-> void:
+	position=pos
+	posSig=pos
+	posActual=pos
+	print(pos)
+
 func _on_TiempoPowerUp_timeout() -> void:
 	animacionCamara.interpolate_property(camara, "zoom", camara.zoom, Vector2(1, 1), 1, Tween.TRANS_BOUNCE, Tween.EASE_IN, 0)
 	animacionCamara.start()
@@ -123,9 +129,10 @@ func Comiendo()-> void:
 	if not sonidoComiendo.is_playing(): sonidoComiendo.play(3.2)
 
 func _on_Pacman_area_entered(area: Area2D) -> void:
-	if not gPacman.powerUp:
+	if   not gPacman.powerUp:
 		#Muerte Pacman
 		sonidoMuerte.play()
 		gCambiadorEscena.CambiarEscena(gCambiadorEscena.escenaActual)
 	else:
+		sonidoMuerte.play()
 		particulas.restart()

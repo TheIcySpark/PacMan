@@ -10,15 +10,15 @@ signal Mapear(Posicion)
 func _ready() -> void:
 	connect("Mapear", self, "Mapear")
 	actualizacion.connect("timeout", self, "ActualizarMapa")
-	actualizacion.start(0.5)
 	add_child(actualizacion)
+	actualizacion.start(0.5)
 
 func ActualizarMapa()-> void:
 	emit_signal("Mapear", gPacman.posicion)
 
 func PosicionValida(pos: Vector2)-> bool:
 	if tile== null: return false
-	if tile.get_cellv(tile.world_to_map(pos))== 1: return true
+	if tile.get_cellv(tile.world_to_map(pos))!= 0: return true
 	else: return false
 
 

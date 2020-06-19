@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Scripts/Niveles/Nivel.gd" type="Script" id=1]
 [ext_resource path="res://RecursosInternos/Tiles/PisoParedes.tres" type="TileSet" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://MusicaSonidos/HaloOst.wav" type="AudioStream" id=6]
 [ext_resource path="res://Sprites/Botones/Boton-4.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/Botones/Boton.png" type="Texture" id=8]
-[ext_resource path="res://RecursosInternos/ComportamientoMundo/Comportamiento1.tres" type="Environment" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.0
@@ -49,15 +48,17 @@ margin_left = -20.0
 margin_top = -20.0
 margin_right = 20.0
 margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Pausa" type="TouchScreenButton" parent="Botones/Control"]
 modulate = Color( 1, 1, 1, 0.196078 )
-position = Vector2( -46.28, -382.68 )
+position = Vector2( -25.6361, -280 )
 scale = Vector2( 1.5, 1.5 )
 normal = ExtResource( 7 )
 pressed = ExtResource( 8 )
 shape = SubResource( 1 )
 action = "ui_pausa"
 
-[node name="ComportamientoMundo" type="WorldEnvironment" parent="."]
-environment = ExtResource( 9 )
+[node name="Portales" type="Node2D" parent="."]
